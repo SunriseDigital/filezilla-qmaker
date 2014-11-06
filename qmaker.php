@@ -42,7 +42,7 @@ EOF;
 EOF;
 
   private $options_msg = array(
-    'f' => 'Files list write from git diff path',
+    'f' => 'path to files list file, write from git diff',
     's' => 'server ip address',
     'l' => 'local base dir',
     'r' => 'sarver base dir',
@@ -52,7 +52,7 @@ EOF;
   private function getRequireOption($name){
     $value = @$this->options[$name];
     if(empty($value)){
-      $this->error(sprintf('Specify %s to %s option.', $this->options_msg[$name], $name));
+      $this->error(sprintf('Specify %s to -%s option.', $this->options_msg[$name], $name));
     }
 
     return $value;
