@@ -42,17 +42,17 @@ EOF;
 EOF;
 
   private $options_msg = array(
-    'f' => 'git diff -w master targetBranch --name-only で書きだしたファイル名のファイルパス',
-    's' => 'サーバーのIPアドレス',
-    'l' => '自分のパソコンのリポジトリベースパス',
-    'r' => 'サーバーのリポジトリベースパス',
-    'u' => 'ファイルをアップロードするユーザー名'
+    'f' => 'Files list write from git diff path',
+    's' => 'server ip address',
+    'l' => 'local base dir',
+    'r' => 'sarver base dir',
+    'u' => 'name of upload user'
   );
 
   private function getRequireOption($name){
     $value = @$this->options[$name];
     if(empty($value)){
-      $this->error('-'.$name.'　のオプションに'.$this->options_msg[$name].'を指定してください');
+      $this->error(sprintf('Specify %s to %s option.', $this->options_msg[$name], $name));
     }
 
     return $value;
@@ -61,7 +61,7 @@ EOF;
   private function getFiles(){
     $path = $this->getRequireOption('f');
     if(!is_readable($path)){
-      $this->error($path.'が読めません。');
+      $this->error($path.' is not readable.');
     }
 
     return explode(PHP_EOL, file_get_contents($path));
@@ -128,13 +128,13 @@ EOF;
     $local_path = $this->getRequireOption('l').DIRECTORY_SEPARATOR.str_replace('/', DIRECTORY_SEPARATOR, $file);
 
     if(!file_exists($local_path)){
-      $this->notice($local_path ." はファイルが存在しません");
+      $this->notice($local_path ." is not exists.");
       return '';
     }
 
     $file_size = @filesize($local_path);
     if ($file_size === 0){
-      $this->notice($local_path ." のサイズは0です。");
+      $this->notice($local_path ." file size is 0");
     }
 
     $params = array(
@@ -186,7 +186,7 @@ EOF;
 
     $main = $this->replaceWrapperTemplate($this->main_wrapper, array('servers' => $server_text));
     $this->echoStdOut($main);
-    $this->echoStdErr(sprintf('%d個のファイルを%dつのサーバーにアップします', $file_count, $server_count));
+    $this->echoStdErr(sprintf('%d files to %d servers.', $file_count, $server_count));
   }
 }
 
