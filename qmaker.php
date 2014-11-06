@@ -64,7 +64,7 @@ EOF;
       $this->error($path.' is not readable.');
     }
 
-    return explode(PHP_EOL, file_get_contents($path));
+    return preg_split('/\n\r|\n|\r/u', file_get_contents($path));
   }
 
   private function error($msg){
