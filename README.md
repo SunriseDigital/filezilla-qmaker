@@ -9,18 +9,30 @@ PHPが必要なのでPHPをインストールしてください。
 ### windows
 
 http://windows.php.net/download/
-ここからPHPをダウンロードします。5.3がインストーラーがあって簡単にインストールできるのでそれを使えばいいでしょうあ。既にもっと新しいバージョンが入っているならそれで問題ありません。
+
+ここからPHPをダウンロードします。5.3はインストーラーがあるので簡単にインストール可能です。既にもっと新しいバージョンが入っているならそれで問題ありません。
 
 http://windows.php.net/downloads/releases/php-5.3.29-Win32-VC9-x86.msi
 
-最新版をインストールしたい方は
-http://php.net/manual/ja/install.windows.php
+最新版をインストールしたい方は[こちら](http://php.net/manual/ja/install.windows.php)を参考にしてください。
+
+コマンドプロンプトを起動し以下のコマンドでインストールを確認して下さい。
+
+```
+php -v
+
+PHP 5.3.29 (cli) (built: Aug 15 2014 19:17:16)
+Copyright (c) 1997-2014 The PHP Group
+Zend Engine v2.3.0, Copyright (c) 1998-2014 Zend Technologies
+```
 
 ### mac
 
 PHP は、OS X バージョン 10.0.0 以降の Mac に標準添付されています。
 
 https://php.net/manual/ja/install.macosx.php
+
+
 
 
 ## ファイルリストの作成
