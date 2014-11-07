@@ -47,7 +47,7 @@ git diff -w master targetBranch --name-only > C:\path\to\filelist.txt
 ## キューファイルの作成
 
 ```
-php /path/to/qmaker.php\
+php C:\path\to\qmaker.php\
  -f "/path/to/filelist.txt"\
  -s "210.168.71.212,210.168.71.213"\
  -l "C:\path\to\local\repos\root"\
