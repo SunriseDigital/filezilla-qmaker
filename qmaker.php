@@ -190,7 +190,7 @@ EOF;
 
     $main = $this->replaceWrapperTemplate($this->main_wrapper, array('servers' => $server_text));
     $this->echoStdOut($main);
-    $this->echoStdErr(sprintf('%d files to %d servers.', $file_count, $server_count));
+    $this->echoStdErr(sprintf('%d files to %d servers [%s].', $file_count, $server_count, $this->getRequireOption('s')));
   }
 }
 
