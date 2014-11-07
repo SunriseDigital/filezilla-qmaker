@@ -72,13 +72,17 @@ EOF;
     die();
   }
 
+  private function getDirSeparator($path){
+    if(strpos($path, "/") !== false){
+      return '/';
+    } else {
+      return '\\';
+    }
+  }
+
   private function buildRemotePath($file){
     $remote_file = $this->getRequireOption('r');
-    if(strpos($remote_file, "/") !== false){
-      $dir_sep = '/';
-    } else {
-      $dir_sep = '\\';
-    }
+    $dir_sep = $this->getDirSeparator($remote_file);
 
     $remote_file .= $dir_sep.$file;
 
@@ -124,7 +128,7 @@ EOF;
   }
 
   private function buildFilesWrapper($file){
-    $paths = explode(DIRECTORY_SEPARATOR, $file);
+    $paths = explode($this->getDirSeparator($file), $file);
     $local_path = $this->getRequireOption('l').DIRECTORY_SEPARATOR.str_replace('/', DIRECTORY_SEPARATOR, $file);
 
     if(!file_exists($local_path)){
