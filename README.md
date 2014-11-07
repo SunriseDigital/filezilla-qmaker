@@ -55,7 +55,9 @@ php C:\path\to\qmaker.php\
  -u "user" > C:\path\to\fuzoku-db.xml
 ```
 
+
 option | 意味
+--- | ---
 f | git diffから書きだしたファイルリストのパスを指定します。
 s | サーバーのIPアドレスを指定します。カンマ区切りで複数指定可能。
 l | ローカルのリポジトリのルートディレクリを指定します。
