@@ -37,12 +37,22 @@ https://php.net/manual/ja/install.macosx.php
 
 ## ファイルリストの作成
 
+公開対象のリポジトリにgitコマンドが実行できるように、リポジトリのディレクトリに移動してください。
+
+```
+cd C:\path\to\repos
+
+git status
+```
+
 ファイルの容量が必要なので作業ツリーにファイルが存在する必要があります。アップ予定のブランチに切り替えて、diffでファイルリストを作成します。
 
 ```
 git checkout targetBranch
 git diff -w master targetBranch --name-only > C:\path\to\filelist.txt
 ```
+
+`> C:\path\to\filelist.txt`はgit diffの結果をテキストファイルに書き出します。
 
 ## キューファイルの作成
 
