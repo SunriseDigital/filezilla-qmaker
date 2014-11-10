@@ -59,12 +59,26 @@ EOF;
   }
 
   private function getFiles(){
-    $path = $this->getRequireOption('f');
-    if(!is_readable($path)){
-      $this->error($path.' is not readable.');
+    $path = @$this->options['f'];
+    if($path){
+      if(!is_readable($path)){
+        $this->error($path.' is not readable.');
+      }
+
+      $files = file_get_contents($path);
+    } else {
+      $files = '';
+      stream_set_blocking(STDIN, 0);
+      while ($line = fgets(STDIN)) {
+        $files .= $line;
+      }
     }
 
-    return preg_split('/\n\r|\n|\r/u', file_get_contents($path));
+    if(!$files){
+      $this->error('Missin file data.');
+    }
+
+    return preg_split('/\n\r|\n|\r/u', $files);
   }
 
   private function error($msg){
