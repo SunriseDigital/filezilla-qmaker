@@ -77,3 +77,6 @@ u | サーバーにファイルをアップロードするユーザー名を指�
 git diff -w master targetBranch --name-only | php C:\path\to\qmaker.php -s "210.168.71.212,210.168.71.213" -l "C:\path\to\local\repos\root" -r "/path/to/remote/repos/root" -u "user" > C:\path\to\fuzoku-db.xml
 ```
 
+## コマンドサンプル集
+
+[プライベートリポジトリ](https://github.com/SunriseDigital/sunrise/wiki/filezila-qmaker%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB)にあります。
