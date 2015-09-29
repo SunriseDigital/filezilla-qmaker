@@ -12,7 +12,7 @@ http://windows.php.net/download/
 
 ここからPHPをダウンロードします。5.3はインストーラーがあるので簡単にインストール可能です。既にもっと新しいバージョンが入っているならそれで問題ありません。
 
-http://windows.php.net/downloads/releases/php-5.3.29-Win32-VC9-x86.msi
+http://windows.php.net/downloads/releases/archives/php-5.3.29-win32-VC9-x86.msi
 
 最新版をインストールしたい方は[こちら](http://php.net/manual/ja/install.windows.php)を参考にしてください。
 
